@@ -1,0 +1,15 @@
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\RunAllTask.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\RunOneTask.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\transformImpl\ZIPCSVTransformFileAllFile.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\connect\MysqlJDBC.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\LoadData2Hive.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\transformImpl\CSVTransformFileOneFile.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\transformImpl\DATTransformFile.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\transform\TransformFile.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\connect\SFTPConnect.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\CheckYinlianFile.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\HistoryODS2Hive.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\contrast_columns\HiveColumns.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\transformImpl\XLSXTransformFile.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\connect\HiveJDBC.java
+E:\work\hive-udf\data-to-hive\src\main\java\com\wscd\cfs\entity\Entity.java

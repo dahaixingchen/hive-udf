@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hive_udf_encrypt" />
+        <module name="hive_udf_desensitization" />
+        <module name="hive_udf_decrypt" />
+        <module name="hive-udf-codeTable" />
+        <module name="hive-udf-json" />
+        <module name="data-to-hive" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="data-to-hive" target="8" />
+      <module name="hive-udf" target="1.5" />
+      <module name="hive-udf-codeTable" target="1.5" />
+      <module name="hive-udf-json" target="8" />
+      <module name="hive_udf_decrypt" target="1.5" />
+      <module name="hive_udf_desensitization" target="1.5" />
+      <module name="hive_udf_encrypt" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
