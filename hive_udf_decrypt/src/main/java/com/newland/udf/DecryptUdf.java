@@ -33,6 +33,6 @@ public class DecryptUdf extends UDF {
         String key = properties.getProperty("key");
 
         String cardNo = DESUtil.decrypt(encryptData,key);
-        return cardNo.trim();
+        return cardNo.trim() ;
     }
 }
