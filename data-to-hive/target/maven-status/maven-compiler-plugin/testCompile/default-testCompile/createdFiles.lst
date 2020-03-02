@@ -1,6 +1,7 @@
 TestBAT.class
 PlaceTestYinLian.class
 XLSXTransformFileCopy.class
+FileSearch.class
 TestHiveJDBC.class
 Place.class
 TestSFTP.class

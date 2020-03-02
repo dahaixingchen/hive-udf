@@ -75,7 +75,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.wscd.cfs.CheckYinlianFile</mainClass>
+                            <mainClass>com.wscd.cfs.RunOneTask</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

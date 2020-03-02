@@ -40,12 +40,13 @@ public class RunOneTask {
             properties.load(resourceAsStream);
         } catch (IOException e) {
             e.printStackTrace();
+            throw e;
         }
         String yestday = LocalDate.now().plusDays(-Integer.parseInt(entity.getFil_diff_runDate())).format(DateTimeFormatter.BASIC_ISO_DATE);
         if(args.length >= 2 && !"".equals(args[1]) && args[1] != null){
             if(args[1].length() != 8){
                 logger.error("请输入8位的年月日，如：20200101");
-                return;
+                throw new RuntimeException("输入的日期格式不对");
             }
             yestday = args[1];
         }
@@ -94,7 +95,7 @@ public class RunOneTask {
             String sftpPassword = properties.getProperty("weidaiSftpPassword");
             String sftpPort = properties.getProperty("sftpPort");
             String privateKey = properties.getProperty("privateKey");
-            yestday = Integer.toString(Integer.parseInt(yestday) - 1);
+//            yestday = Integer.toString(Integer.parseInt(yestday) - 1);
             if(args.length >= 2 && !"".equals(args[1]) && args[1] != null){
                 if(args[1].length() != 8){
                     logger.error("请输入8位的年月日，如：20200101");
