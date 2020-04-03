@@ -1,9 +1,12 @@
 package com.newLand.udf;
 
-import com.newLand.udf.deal.JDBCGetCodeTableData;
+import com.newLand.udf.deal.ProperGetData;
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.hive.ql.udf.UDFType;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * @ClassName: codeTableUDF
@@ -23,9 +26,7 @@ import org.apache.hadoop.hive.ql.udf.UDFType;
 )
 public class codeTableUDF extends UDF {
     public String evaluate(String systemSource, String field,String code) {
-        JDBCGetCodeTableData jdbcGetCodeTableData = new JDBCGetCodeTableData();
-        jdbcGetCodeTableData.initialize();
-        return jdbcGetCodeTableData.getData(systemSource, field, code);
+        String data = ProperGetData.getData(systemSource, field, code);
+        return data;
     }
-
 }

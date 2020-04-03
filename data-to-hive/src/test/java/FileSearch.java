@@ -162,9 +162,8 @@ public class FileSearch {
     @Test
     public void test1(){
 
-//        String yestday = LocalDate.now().plusDays
-//                (-Integer.parseInt(entity.getFil_diff_runDate())).format(DateTimeFormatter.BASIC_ISO_DATE);
-//        yestday = Integer.toString(Integer.parseInt(yestday) - 1);
+        String yestday = LocalDate.now().plusDays(0).format(DateTimeFormatter.BASIC_ISO_DATE);
+        System.out.println(yestday);
 
     }
 

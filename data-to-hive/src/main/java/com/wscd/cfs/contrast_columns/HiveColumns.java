@@ -40,8 +40,4 @@ public class HiveColumns {
         }
         return columnsList;
     }
-//    public static ArrayList<Integer> getFileColumnOrder(List<Map<String, Integer>> hiveColumns,){
-//        ArrayList<Integer> fileIndexList = new ArrayList<>();
-//        return fileIndexList;
-//    }
 }

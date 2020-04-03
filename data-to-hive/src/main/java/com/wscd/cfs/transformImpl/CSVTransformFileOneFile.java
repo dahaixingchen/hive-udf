@@ -3,6 +3,7 @@ package com.wscd.cfs.transformImpl;
 import com.wscd.cfs.transform.TransformFile;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.stringtemplate.v4.ST;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -76,18 +77,18 @@ public class CSVTransformFileOneFile implements TransformFile {
                     StringBuffer tmpStrBuff = new StringBuffer();
                     String tmpStr = null;
                     boolean isFirstRow = true;
+
+                    int ii = 0;
+
                     while ((tmpStr = bufferedReader.readLine()) != null){
                         int i = 0 ;
                         if(!isFirstRow){
-                            tmpStr =StringUtils.replace(tmpStr,"|+|","|+| ");
-                            String[] split1 = StringUtils.split(tmpStr, "|+|");
 
-                            //hive 表中的字段和文件中的字段个数不一致直接返回
-                            if (hiveColumns.size()-3 != split1.length){
-                                logger.warn("文件中字段的个数和hive表中的字段的个数不一致");
-//                                return transTmpFiles;
-                                throw new Exception("文件中字段的个数和hive表中的字段的个数不一致");
-                            }
+                            ii++;
+                            String tmpStr_test = tmpStr;
+
+                            tmpStr =StringUtils.replace(tmpStr,"|+|","\u0001 ");
+                            String[] split1 = tmpStr.split("\u0001");
 
                             for(int j = 0;j <fileIndexList.size(); j++){
                                 if (-1 != fileIndexList.get(j)){
@@ -105,8 +106,16 @@ public class CSVTransformFileOneFile implements TransformFile {
                             bufferedWriter.write(tmpStrBuff.toString());
                             tmpStrBuff.delete(0,tmpStrBuff.length());
                         }else{
+                            String[] split1 = StringUtils.split(tmpStr,"|+|");
+                            //hive 表中的字段和文件中的字段个数不一致直接返回
+                            if (hiveColumns.size()-3 != split1.length){
+                                logger.info("hive表的字段个数"+hiveColumns.size());
+                                logger.info("文件的字段个数"+split1.length);
+                                logger.error("文件中字段的个数和hive表中的字段的个数不一致");
+                                throw new Exception("文件中字段的个数和hive表中的字段的个数不一致");
+                            }
+
                             for (int j = 0;j<hiveColumns.size()-1;j++){
-                                String[] split1 = StringUtils.split(tmpStr,"|+|");
                                 int k = 0;
                                 for (;k < split1.length; k++){
                                     if (hiveColumns.get(j).containsKey(split1[k].toLowerCase())){

@@ -14,6 +14,9 @@ import org.apache.hadoop.hive.serde2.objectinspector.primitive.DateObjectInspect
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.StringObjectInspector;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 /**
  * @ClassName: codeTableUDF
  * @Description: TODO
@@ -55,11 +58,20 @@ public class codeTableGenericUDF extends GenericUDF {
             this.codeString = (StringObjectInspector) tmpDataString3;
         }
         //初始化jdbc连接池
-        new JDBCGetCodeTableData().initialize();
+        try {
+            new JDBCGetCodeTableData().initialize();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         return PrimitiveObjectInspectorFactory.javaStringObjectInspector;
     }
 
+    @lombok.SneakyThrows
     @Override
     public Object evaluate(DeferredObject[] deferredObjects) throws HiveException {
         Integer length = deferredObjects.length;
