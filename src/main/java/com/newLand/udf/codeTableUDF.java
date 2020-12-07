@@ -11,6 +11,11 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  **/
 public class codeTableUDF extends UDF {
     public static void main(String[] args) {
-
+    /**
+     * @todo:
+      * @param args
+     * @return void
+     * @date: 2020/12/7 16:38
+     */
     }
 }
