@@ -10,5 +10,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  * @Version 1.0
  **/
 public class codeTableUDF extends UDF {
+    public static void main(String[] args) {
 
+    }
 }
